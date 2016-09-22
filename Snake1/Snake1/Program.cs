@@ -16,6 +16,19 @@ namespace Snake1
             Point p2 = new Point(4, 5, '#');
             p2.Draw();
 
+            Point p3 = new Point(6, 9, '$');
+            p3.Draw();
+
+            Point p4 = new Point(3, 1, '!');
+            p4.Draw();
+
+            List<Point> plist = new List<Point>();
+            plist.Add(p1);
+            plist.Add(p2);
+            plist.Add(p3);
+            plist.Add(p4);
+          
+
             Console.ReadLine();
         }
        
