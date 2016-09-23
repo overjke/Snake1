@@ -17,7 +17,7 @@ namespace Snake1
             p2.Draw();
 
             horizontline lineOne = new horizontline(0, 20, 0, '*');
-            Verticalline lineTwo = new Verticalline(8, 12, 10, '+');
+            VertikalLine lineTwo = new VertikalLine(8, 12, 10, '+');
             lineOne.Drow();
             lineTwo.Drow();
            
