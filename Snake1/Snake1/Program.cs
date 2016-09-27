@@ -20,8 +20,11 @@ namespace Snake1
             VertikalLine lineTwo = new VertikalLine(8, 12, 10, '+');
             lineOne.Drow();
             lineTwo.Drow();
-           
 
+            // Отрисовка точек
+            Point p = new Point(4, 5, '#');
+            Snake1 snake = new Snake1(p, 4, Direction.RIGHT);
+            snake.Drow();
 
 
             Console.ReadLine();
