@@ -2,30 +2,43 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Snake1
 {
-    class Program
+    class Program 
     {
         static void Main(string[] args)
         {
-            Point p1 = new Point(1, 3, '*');
-            p1.Draw();
+            Console.SetBufferSize(80, 25);
 
-            Point p2 = new Point(4, 5, '#');
-            p2.Draw();
-
-            horizontline lineOne = new horizontline(0, 20, 0, '*');
-            VertikalLine lineTwo = new VertikalLine(8, 12, 10, '+');
-            lineOne.Drow();
-            lineTwo.Drow();
+            
+            horizontline lineOne = new horizontline(0, 78, 0, '+');
+            horizontline lineTwo = new horizontline(0, 78, 24, '+');
+            VertikalLine lineThree = new VertikalLine(0, 24, 0, '+');
+            VertikalLine lineFour = new VertikalLine(0, 24, 78, '+');
+            
+            lineOne.Draw();
+            lineTwo.Draw();
+            lineThree.Draw();
+            lineFour.Draw();
 
             // Отрисовка точек
             Point p = new Point(4, 5, '#');
             Snake1 snake = new Snake1(p, 4, Direction.RIGHT);
-            snake.Drow();
-
+            snake.Draw();
+            
+            while(true)
+            {
+                if(Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo key = Console.ReadKey();
+                    snake.HadleKey(key.Key);
+                }
+                Thread.Sleep(100);
+                snake.Move();
+            }
 
             Console.ReadLine();
         }
